@@ -8,10 +8,11 @@ import pytesseract
 #nltk.download('punkt')
 
 #API : Application Programming Interface
-openai.api_key = "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"
+with open('apidata.txt', 'r') as file:
+    openai.api_key = file.readline()
 
 # Open the image using PIL
-image = Image.open('book.jpeg')
+image = Image.open('image.png')
 
 # Convert the image to grayscale
 image = image.convert('L')
